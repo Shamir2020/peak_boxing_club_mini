@@ -135,7 +135,12 @@ class LoginPage extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: TextButton(
                           onPressed: () {
-                            Get.snackbar("Forgot Password", "Redirect to reset password");
+                            Get.snackbar(
+                                "Forgot Password",
+                                "Reset password from Peak Boxing Club Website",
+                              backgroundColor: Colors.greenAccent,
+                              colorText: Colors.black
+                            );
                           },
                           child: const Text(
                             "Forgot Password?",

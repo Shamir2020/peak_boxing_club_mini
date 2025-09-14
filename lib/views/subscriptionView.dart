@@ -109,10 +109,10 @@ class SubscriptionVew extends StatelessWidget {
                           ),
                           child: const Icon(Icons.workspace_premium, color: Colors.amber, size: 28),
                         ),
-                        title: const Text("Pro Ringside",
+                        title: Text(subscriptionController.subscriptionData['subscription']['serviceName']!,
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
-                        subtitle: const Text(
-                          "Full Access to Advanced Sessions and Archives",
+                        subtitle: Text(
+                          subscriptionController.subscriptionData['subscription']['description']!,
                           style: TextStyle(color: Colors.white70, fontSize: 13),
                         ),
                         trailing: Container(

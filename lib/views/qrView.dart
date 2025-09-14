@@ -31,7 +31,8 @@ class QRView extends StatelessWidget {
                   }
                   else if (!subscriptionController.isSubscriptionExist.value){
                     return QrImageView(
-                      data: "No Subscription found for this person",
+                      data: "No Subscription found for this person"
+                          "Active Status: False",
                       version: QrVersions.auto,
                       size: width * 0.8,
                       gapless: false,
@@ -40,7 +41,9 @@ class QRView extends StatelessWidget {
                   }
                   else {
                     return QrImageView(
-                      data: "Start: ${subscriptionController.subscriptionData["startDate"]}, "
+                      data:"PackageName: ${subscriptionController.subscriptionData['subscription']['serviceName']}, "
+                          "PackagePrice: ${subscriptionController.subscriptionData['subscription']['price']}, "
+                          "Start: ${subscriptionController.subscriptionData["startDate"]}, "
                           "End: ${subscriptionController.subscriptionData["endDate"]}, "
                           "Active Status: ${subscriptionController.isSubscriptionActive}",
                       version: QrVersions.auto,

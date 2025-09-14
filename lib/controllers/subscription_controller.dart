@@ -38,7 +38,18 @@ class SubscriptionController extends GetxController{
       }
       else {
         var data = {};
-        data['subscription'] = subscription['subscription'];
+
+        if (subscription["subscription"] != null){
+          var subData = {};
+          subData["serviceName"] = subscription['subscription']['serviceName'];
+          subData['price'] = subscription['subscription']['price'];
+          subData['description'] = subscription['subscription']['description'];
+
+          data['subscription'] = subData;
+
+          // data['subscription'] = subscription['subscription'];
+        }
+
         data['paymentStatus'] = subscription['paymentStatus'];
         data['startDate'] = subscription['startDate'].split("T")[0];
         data['method'] = subscription['method'];
