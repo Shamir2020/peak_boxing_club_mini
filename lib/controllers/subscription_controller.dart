@@ -17,10 +17,15 @@ class SubscriptionController extends GetxController{
 
   void loadSubscriptionData() async{
 
+    if (authController.token.value.isEmpty || authController.token.value == ""){
+      return;
+    }
+
     Map<String, dynamic> decodedToken = JwtDecoder.decode(authController.token.value);
 
     var userId = decodedToken["_id"];
     print("ID = " + decodedToken["_id"]);
+
 
     var response = await http.get(Uri.parse(ApiRoutes().subscriptionGetApiRoute + decodedToken["_id"]));
 

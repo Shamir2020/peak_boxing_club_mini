@@ -8,7 +8,7 @@ import '../styles/styles.dart';
 class SubscriptionVew extends StatelessWidget {
   final AuthController authController = Get.find();
 
-  final SubscriptionController subscriptionController = Get.put(SubscriptionController());
+  final SubscriptionController subscriptionController = Get.find();
 
   SubscriptionVew({super.key});
 
@@ -34,19 +34,19 @@ class SubscriptionVew extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            style: IconButton.styleFrom(
-              backgroundColor: Colors.grey[700],
-              foregroundColor: const Color(0xFF9CFE4F),
-            ),
-            onPressed: () {
-              // Get.back();
-              // rootNavController.currentViewIndex.value = 1;
-            },
-            icon: const Icon(Icons.settings),
-          )
-        ],
+        // actions: [
+        //   IconButton(
+        //     style: IconButton.styleFrom(
+        //       backgroundColor: Colors.grey[700],
+        //       foregroundColor: const Color(0xFF9CFE4F),
+        //     ),
+        //     onPressed: () {
+        //       // Get.back();
+        //       // rootNavController.currentViewIndex.value = 1;
+        //     },
+        //     icon: const Icon(Icons.settings),
+        //   )
+        // ],
       ),
       body: Container(
         width: double.infinity,

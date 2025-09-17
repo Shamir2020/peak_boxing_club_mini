@@ -74,70 +74,70 @@ class ProfileView extends StatelessWidget {
 
               const SizedBox(height: 30),
 
-              // Notification toggle
-              Material(
-                color: Colors.grey[850],
-                borderRadius: BorderRadius.circular(8),
-                child: InkWell(
-                  splashColor: Colors.white24,
-                  highlightColor: Colors.white10,
-                  borderRadius: BorderRadius.circular(8),
-                  onTap: (){
-
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "Notification",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                        Transform.scale(
-                          scale: 0.8,
-                          child: Switch(
-                            value: true,
-                            onChanged: (val) {},
-                            activeColor: const Color(0xFF9CFE4F), // green switch
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 15),
-
-              // Settings toggle
-
-
-              Material(
-                color: Colors.grey[850], // background so ripple is visible
-                borderRadius: BorderRadius.circular(8),
-                child: InkWell(
-                  onTap: () {
-                    // your action here
-                  },
-                  splashColor: Colors.white24,   // ripple color
-                  highlightColor: Colors.white10, // pressed color
-                  borderRadius: BorderRadius.circular(8),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Settings",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                        Icon(Icons.settings, color: Colors.white),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              // // Notification toggle
+              // Material(
+              //   color: Colors.grey[850],
+              //   borderRadius: BorderRadius.circular(8),
+              //   child: InkWell(
+              //     splashColor: Colors.white24,
+              //     highlightColor: Colors.white10,
+              //     borderRadius: BorderRadius.circular(8),
+              //     onTap: (){
+              //
+              //     },
+              //     child: Padding(
+              //       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           const Text(
+              //             "Notification",
+              //             style: TextStyle(color: Colors.white, fontSize: 16),
+              //           ),
+              //           Transform.scale(
+              //             scale: 0.8,
+              //             child: Switch(
+              //               value: true,
+              //               onChanged: (val) {},
+              //               activeColor: const Color(0xFF9CFE4F), // green switch
+              //             ),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              //
+              // const SizedBox(height: 15),
+              //
+              // // Settings toggle
+              //
+              //
+              // Material(
+              //   color: Colors.grey[850], // background so ripple is visible
+              //   borderRadius: BorderRadius.circular(8),
+              //   child: InkWell(
+              //     onTap: () {
+              //       // your action here
+              //     },
+              //     splashColor: Colors.white24,   // ripple color
+              //     highlightColor: Colors.white10, // pressed color
+              //     borderRadius: BorderRadius.circular(8),
+              //     child: Padding(
+              //       padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: const [
+              //           Text(
+              //             "Settings",
+              //             style: TextStyle(color: Colors.white, fontSize: 16),
+              //           ),
+              //           Icon(Icons.settings, color: Colors.white),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
 
 
@@ -145,68 +145,47 @@ class ProfileView extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    fixedSize: const Size(150, 35),
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.red[300],
-                  ),
-                  onPressed: () {
-                    // LOGOUT HERE
-                    Get.offAllNamed('/signinScreen');
-
-                    authController.logout();
-
-                    Get.snackbar(
-                        "Success",
-                        "Logout successful",
-                        backgroundColor: Colors.greenAccent,
-                      colorText: Colors.black
-                    );
-
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.logout, color: Colors.white,),
-                      const SizedBox(width: 5,),
-                      Text(
-                        "Logout",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                        ),
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
                       ),
-                    ],
-                  )
+                      fixedSize: const Size(150, 35),
+                      padding: EdgeInsets.zero,
+                      backgroundColor: Colors.red[300],
+                    ),
+                    onPressed: () {
+                      // LOGOUT HERE
+                      Get.offAllNamed('/signinScreen');
+
+                      authController.logout();
+
+                      Get.snackbar(
+                          "Success",
+                          "Logout successful",
+                          backgroundColor: Colors.greenAccent,
+                          colorText: Colors.black
+                      );
+
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.logout, color: Colors.white,),
+                        const SizedBox(width: 5,),
+                        Text(
+                          "Logout",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ],
+                    )
                 ),
               )
 
 
-              // InkWell(
-              //   onTap: () {
-              //     // LOGOUT HERE
-              //   },
-              //   borderRadius: BorderRadius.circular(8), // optional rounded effect
-              //   splashColor: Colors.redAccent.withOpacity(0.2), // ripple color
-              //   highlightColor: Colors.redAccent.withOpacity(0.1), // when pressed
-              //   child: Padding(
-              //     padding: const EdgeInsets.fromLTRB(3, 20, 3, 0),
-              //     child: Row(
-              //       children: [
-              //         Text(
-              //           "Logout",
-              //           style: TextStyle(
-              //             color: Colors.redAccent,
-              //             fontSize: 16,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // )
+
 
             ],
           ),

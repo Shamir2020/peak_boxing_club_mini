@@ -41,6 +41,7 @@ dependencies:
   line_icons: ^2.0.3
   qr_flutter: ^4.1.0
   jwt_decoder: ^2.0.1
+  connectivity_plus: ^7.0.0
 
 dev_dependencies:
   flutter_test:

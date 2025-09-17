@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:peak_boxing_club_mini/controllers/connectivity_check_controller.dart';
+import 'package:peak_boxing_club_mini/controllers/subscription_controller.dart';
+import 'package:peak_boxing_club_mini/screens/noInternet.dart';
 import 'package:peak_boxing_club_mini/screens/rootScreen.dart';
 import 'package:peak_boxing_club_mini/screens/signinScreen.dart';
+import 'package:peak_boxing_club_mini/screens/splashScreen.dart';
 import 'package:peak_boxing_club_mini/theme/app_colors.dart';
-
 import 'controllers/auth_controller.dart';
+import 'package:flutter/services.dart';
 
 
 void main() async {
@@ -14,6 +18,15 @@ void main() async {
   await GetStorage.init();
 
   Get.put(AuthController());
+
+  Get.put(SubscriptionController());
+
+  Get.put(ConnectivityCheckController());
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]);
 
   runApp(PeakBoxingClub());
 }
@@ -54,10 +67,12 @@ class PeakBoxingClub extends StatelessWidget {
             )
         ),
       ),
-      initialRoute: '/rootScreen',
+      initialRoute: '/splashScreen',
       getPages: [
         GetPage(name: '/rootScreen', page: ()=> RootScreen()),
-        GetPage(name: '/signinScreen', page: ()=> LoginPage())
+        GetPage(name: '/signinScreen', page: ()=> LoginPage()),
+        GetPage(name: '/splashScreen', page: ()=> SplashScreen()),
+        GetPage(name: '/noInternet', page: ()=> NoInternetScreen())
       ],
     );
   }
